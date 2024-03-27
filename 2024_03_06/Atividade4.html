@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+
+<script>
+    /*
+    Atividade 4
+    Escreva um programa que pergunte o peso e a altura de um usuário e calcule o IMC
+     (Índice de Massa Corporal). Utilize a seguinte tabela para classificar o IMC e exiba
+      a classificação junto com o resultado: 
+IMC	Classificação
+Abaixo de 18,5	Abaixo do peso
+Entre 18,5 e 24,9	Peso normal
+Entre 25 e 29,9	Excesso de peso
+Entre 30 e 34,9	Obesidade grau I
+Acima de 35	Obesidade grau II ou superior
+    */
+
+    let imc = [];
+
+    imc.push(altura = Number(prompt("Informe sua Altura")));
+    imc.push(peso = Number(prompt("Informe seu Peso")));
+
+    imc.push(resultado = peso / (altura * altura));
+
+    resultado < 18 ? alert(`Com ${resultado.toFixed(1)}, de IMC está Abaixo do peso`) :
+        resultado >= 18.5 && resultado <= 24.9 ? alert(`Com ${resultado.toFixed(1)}, de IMC está no Peso normal`) :
+            resultado >= 25 && resultado <= 29.9 ? alert(`Com ${resultado.toFixed(1)}, de IMC está em Excesso de peso`) :
+            resultado >= 30 && resultado <= 35 ? alert(`Com ${resultado.toFixed(1)}, de IMC está em Obesidade grau I`) :
+                alert(`Com ${resultado.toFixed(1)}, de IMC está em Obesidade grau II ou superior`);
+
+</script>

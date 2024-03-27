@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+
+<script>
+    /*
+2. Exibir a tabuada de um número específico:
+
+Peça ao usuário para digitar um número.
+Use um loop for para exibir a tabuada desse número de 1 a 10.
+*/
+    //debugger
+    let numero = Number(prompt("Escolha o número para a tabuada"))
+    let tabuada = [];
+
+    for (x = 0; x <= 10; x = x + 1) {
+        tabuada.push(numero * x);
+    }
+    for (x = 0; x <= 10; x = x + 1) {
+        alert(`Seguindo a tabuada do ${numero}, multiplicado por ${x}, encontra-se  ${tabuada[x]}`);
+        console.log(`Seguindo a tabuada do ${numero}, multiplicado por ${x}, encontra-se  ${tabuada[x]}`);
+    }
+
+</script>

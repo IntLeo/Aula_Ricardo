@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+
+<script>
+    /*
+    Atividade 5
+    Desenvolva um programa que calcule o salário líquido de um funcionário.
+     O programa deve perguntar o salário bruto, o valor das horas extras trabalhadas
+      e o valor do desconto do INSS. Calcule e mostre o salário líquido do funcionário.
+    */
+
+    let salario = [];
+
+    salario.push(bruto = (Number(prompt("Insira o salário Bruto:"))));
+    salario.push(horas = (Number(prompt("Valor das horas extras trabalhadas:"))));
+    salario.push(inss = (Number(prompt("Valor em % do inss:"))));
+    
+    salario.push(resInss = bruto * (inss / 100) );
+
+    salario.push(resultado = (bruto - resInss) + horas );
+
+alert(`Com o salário Bruto de R$${bruto} reais, um desconto de ${inss}% do inss, e recebendo a mais R$${horas} reais, em horas extras receberá um salário liquido de R$${resultado} reais *-*`);
+
+
+</script>
