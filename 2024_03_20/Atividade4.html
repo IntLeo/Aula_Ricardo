@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+    /*
+4 Jogo de adivinhação:
+Defina um número aleatório fixo.
+Peça ao usuário para tentar adivinhar o número.
+Use uma estrutura If/Else para verificar se a adivinhação está correta e dar pistas ao usuário se o número é maior ou menor.
+usar for
+    */
+    alert("Jogo da adivinhação");
+    let numero;
+    let aleatorio = (Math.random() * 10).toFixed(0);
+
+    while (aleatorio != numero) {
+
+        numero = Number(prompt("Escolha um número de 0 a 10:"));
+
+        if (numero == aleatorio) {
+
+            alert("Acertou!!");
+
+        } else if (numero < aleatorio) {
+
+            alert("O número é Maior");
+
+        } else {
+            alert("O número é Menor!!");
+        }
+    }
+</script>
