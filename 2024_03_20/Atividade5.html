@@ -1,6 +1,6 @@
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <script>
-    /*
+  /*
   5. Calcular média de notas de alunos:
 Solicite ao usuário que insira quantas notas deseja calcular a média.
 Utilize um loop for ou while para receber as notas.
@@ -9,23 +9,22 @@ Use uma estrutura If/Else para exibir se o aluno foi aprovado (média maior ou i
 usando while
     */
 
-    let notas = Number(prompt("Digite quantas notas irá informar"));
-let media = 0
-    for (let x = 1; x <= notas; x++) {
-        let nota = Number(prompt(`Digite a ${x} nota:`));
-        media = media + nota;
+  let notas = Number(prompt("Digite quantas notas irá informar"));
+  let media = 0;
+  let x = 0;
+  while (x != notas) {
+    let nota = Number(prompt(`Digite a ${x+1} nota:`));
+    media = media + nota;
+    x++;
+  }
 
-    }
+  media = media / notas;
 
-    media = media / notas;
-    
-    alert(`A média das ${notas} notas é de ${media}`);
+  alert(`A média das ${notas} notas é de ${media}`);
 
-    if (media >= 7) {
-        alert(`Aprovado!! com a média de ${media.toFixed(0)}`);
-    } else if (media < 7) {
-        alert(`Reprovado!! com a média de ${media}`);
-    }
-
-
+  if (media >= 7) {
+    alert(`Aprovado!! com a média de ${media.toFixed(0)}`);
+  } else if (media < 7) {
+    alert(`Reprovado!! com a média de ${media.toFixed(0)}`);
+  }
 </script>

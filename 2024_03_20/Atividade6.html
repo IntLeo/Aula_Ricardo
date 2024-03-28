@@ -7,17 +7,16 @@ Após calcule o ano das próximas 10 copas do mundo.
 while
     */
 let copa = Number(prompt("Insira a Data da ultima copa do Mundo:"));
-
 var cop = [];
 
 alert(`As próximas 10 copas do mundo serão em:`);
-
-for (let x = 0; x < 10; x++) {
+let x = 0;
+while(x != 10){
 
     copa += 4;
     alert (copa);
     cop.push(copa);
-    
+    x++;
 }
 
 console.log(`As próximas copas do mundo serão em`);

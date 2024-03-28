@@ -9,11 +9,12 @@ Peça ao usuário para digitar um número.
 Use um loop while para exibir a tabuada desse número de 1 a 10.
 */
     //debugger
-    let numero = Number(prompt("Escolha o número para a tabuada"))
+    let numero = Number(prompt("Escolha o número para a tabuada"));
     let tabuada = [];
-
-    for (x = 0; x <= 10; x = x + 1) {
+    let x = 0;
+    while(x != 11) {
         tabuada.push(numero * x);
+        x++;
     }
     for (x = 0; x <= 10; x = x + 1) {
         alert(`Seguindo a tabuada do ${numero}, multiplicado por ${x}, encontra-se  ${tabuada[x]}`);

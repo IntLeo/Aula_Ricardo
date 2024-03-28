@@ -1,16 +1,18 @@
 <meta charset="UTF-8">
 <script>
     /*
-    1. Contar até um número específico com um loop wile:
+    1. Contar até um número específico com um loop while:
 
 Peça ao usuário para digitar um número.
-Use um loop for para contar de 1 até o número especificado e exibir cada número na tela.
+Use um loop while para contar de 1 até o número especificado e exibir cada número na tela.
     */
 let numero = Number(prompt("Digite um número:"));
-
-for(x = 1;x < numero; x++ ){ //x = x + 1
+let x = 1;
+while(x != numero);
+{
     alert(`Contando... ${x}`);
     console.log(`Contando... ${x}`);
+    x++
 }
 alert(`O número escolhido é ${x}`);
 console.log(`O número escolhido é ${x}`);
