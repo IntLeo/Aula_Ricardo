@@ -11,8 +11,14 @@
     */
    
     let valor = Number(prompt("Digite o valor da casa:"));
-    let salario = Number(prompt("Informe seu salário:"));''
-    let anos = Number(prompt("Digite em até quantos anos quer pagar:"));''
+    let salario = Number(prompt("Informe seu salário:"));
+    let anos = Number(prompt("Digite em até quantos anos quer pagar:"));
 
+    let emprestimo = valor / (anos * 12);
+
+    let max = salario * 0.3
    
+emprestimo < max ? alert(`sim`) :
+alert(`nao`);
+
 </script>
