@@ -8,6 +8,8 @@
      O programa vai perguntar o valor da casa, o salário do comprador e em quantos anos ele vai pagar.
       Calcule o valor da prestação mensal,
      sabendo que ela não pode exceder 30% do salário ou então o empréstimo será negado.
+
+     Leonardo Machado e Leonardo Ferrari
     */
    
     let valor = Number(prompt("Digite o valor da casa:"));
@@ -18,7 +20,7 @@
 
     let max = salario * 0.3
    
-emprestimo < max ? alert(`sim`) :
-alert(`nao`);
+emprestimo < max ? alert(`Está Aprovado!! pagando em ${anos} ano(s), parcelas mensais de R$ ${emprestimo.toFixed() } reais, recebendo um salário de R$ ${salario} reais, está abaixo dos 30%`) :
+alert(`Está Negado!! pagando em ${anos} ano(s), parcelas mensais de R$ ${emprestimo.toFixed() } reais, fica um valor elevado recebendo R$ ${salario} reais por mês, estrapolando os 30% do mesmo`);
 
 </script>

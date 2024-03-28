@@ -1,0 +1,41 @@
+<meta charset="utf-8" />
+
+<script>
+  /*
+      Atividade 4
+
+      4. Desenvolva um programa que faça o sorteio de 20 números entre 0 e 10 e mostre na tela:
+a) Quais foram os números sorteados
+b) Quantos números estão acima de 5
+c) Quantos números estão abaixo de 5
+d) E quantos números 5 têm
+    
+   Leonardo Machado e Leonardo Ferrari
+   */
+  let relacao = [];
+  let acima = 0;
+  let abaixo = 0;
+  let igual = 0;
+
+  for (let x = 0; x < 20; x++) {
+
+    relacao.push(parseInt(Math.random() * 11));
+
+    if (relacao[x] > 5) {
+      acima += 1;
+    } else if (relacao[x] < 5) {
+      abaixo += 1;
+    } else if (relacao[x] == 5) {
+      igual += 1;
+    }
+  }
+  
+  alert(`Os valores sorteados foram os seguintes: ${relacao}`);
+  console.log(`Os valores sorteados foram os seguintes: ${relacao}`);
+  alert(`Dos valores sorteados ${acima} deles estão acima de 5`);
+  console.log(`Dos valores sorteados ${acima} deles estão acima de 5`);
+  alert(`Dos valores sorteados ${abaixo} deles estão abaixo de 5`);
+  console.log(`Dos valores sorteados ${abaixo} deles estão abaixo de 5`);
+  alert(`Dos valores sorteados ${igual} deles são iguais a 5`);
+  console.log(`Dos valores sorteados ${igual} deles são iguais a 5`);
+</script>

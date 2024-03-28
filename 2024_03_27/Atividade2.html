@@ -1,0 +1,46 @@
+<meta charset="utf-8" />
+
+<script>
+
+      /*
+      Atividade 2
+     2. Um programa de vida saudável quer dar pontos atividades físicas que podem ser trocados por dinheiro.
+  O sistema funciona assim:
+   - Cada hora de atividade física no mês vale pontos
+   - até 10h de atividade no mês: ganha 2 pontos por hora
+   - de 10h até 20h de atividade no mês: ganha 5 pontos por hora
+   - acima de 20h de atividade no mês: ganha 10 pontos por hora
+   - A cada ponto ganho, o cliente fatura R$0,05 (5 centavos)
+  Faça um programa que leia quantas horas de atividade uma pessoa teve por mês,
+   calcule e mostre quantos pontos ela teve e quanto dinheiro ela conseguiu ganhar.
+
+   Leonardo Machado e Leonardo Ferrari
+   */
+
+      let tempo = Number(prompt("Escreva quantas horas de atividades realizou este mês:"));
+      let valor = 0.05; // - A cada ponto ganho, o cliente fatura R$0,05 (5 centavos)
+
+
+      if (tempo < 10) 
+      {
+          let ponto = 2; // - até 10h de atividade no mês: ganha 2 pontos por hora
+          alert(`Foi realizado ${tempo} hora(s) de atividade este mês, ganhando ${((tempo*ponto)*valor).toFixed(2)} reais.`);
+          console.log(`Foi realizado ${tempo} hora(s) de atividade este mês, ganhando ${((tempo*ponto)*valor).toFixed(2)} reais.`);
+          console.log(`Sendo ${ponto} pontos por hora e cada ponto valendo R$ ${valor} centavos`); 
+        }
+        else if(tempo >= 10 && tempo <= 20) 
+        {
+            let ponto = 5; // - de 10h até 20h de atividade no mês: ganha 5 pontos por hora
+            alert(`Foi realizado ${tempo} horas de atividade este mês, ganhando ${((tempo*ponto)*valor).toFixed(2)} reais.`);
+            console.log(`Foi realizado ${tempo} horas de atividade este mês, ganhando ${((tempo*ponto)*valor).toFixed(2)} reais.`);
+            console.log(`Sendo ${ponto} pontos por hora e cada ponto valendo R$ ${valor} centavos`); 
+         
+      }
+      else 
+      {
+          let ponto = 10; // - acima de 20h de atividade no mês: ganha 10 pontos por hora
+          alert(`Foi realizado ${tempo} horas de atividade este mês, ganhando ${((tempo * ponto) * valor).toFixed(2)} reais.`);
+          console.log(`Foi realizado ${tempo} horas de atividade este mês, ganhando ${((tempo * ponto) * valor).toFixed(2)} reais.`);
+          console.log(`Sendo ${ponto} pontos por hora e cada ponto valendo R$ ${valor} centavos`);
+      }
+</script>
