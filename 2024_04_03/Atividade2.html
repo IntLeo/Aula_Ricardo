@@ -1,40 +1,38 @@
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 <script>
-
-    /*
+  /*
     Atividade 2
    Crie um vetor com 10 posições e adicione numeros aleatorios e alguns valores repetidos, utilizando 'for'
     verifique se existem valores iguais e remova os valores repetidos deixando apenas uma ocorrência. 
     */
-    let numeros = [];
+  let numeros = [];
 
-    for (let x = 0; x < 10; x++) {
-        numeros.push(Math.floor(Math.random() * 100));
+  for (let x = 0; x < 10; x++) {
+    numeros.push(Math.floor(Math.random() * 100));
+  }
+  numeros[1] = numeros[5];
+  numeros[0] = numeros[9];
+
+  console.log(`A seqência de números aleatorios é: `)
+  console.log(numeros);
+  console.log(`Números repetidos serão apagados... `)
+
+  let f = 0;
+  let cont = 0;
+
+  for (let x = 0; x < numeros.length; x++) {
+    for (let y = 0; y < numeros.length; y++) {
+      if (numeros[x] == numeros[y]) {
+        cont++;
+      }
+      if (numeros[x] == numeros[y] && cont >= 2) {
+        numeros.splice(numeros.indexOf((f = numeros[y])), 1);
+        console.log(`Existem mais de um número ${f} Apagando...`)
+      }
     }
-    //numeros[1] = numeros[5] 
-    numeros[0] = numeros[9]
-
-    console.log(numeros)
-    let t = [];
-
-    for (let x = 0; x < numeros.length; x++) {
-
-        for (let y = 0; y < numeros.length; y++) {
-
-            if (numeros[x] == numeros[y]) {
-                let nu = numeros[x]
-                let num = numeros[y]
-                console.log(numeros.indexOf(nu),numeros.indexOf(num))
-                if (numeros.indexOf(nu) != numeros.indexOf(num)) {
-
-                    t.push(numeros[x])
-                }
-
-
-            }
-        }
-    }
-    console.log(t)
-    console.log(numeros)
+    cont = 0;
+  }
+  console.log(`Resultando na seguinte sequência`);
+  console.log(numeros)
 </script>
