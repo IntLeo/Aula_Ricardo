@@ -1,0 +1,31 @@
+<meta charset="utf-8" />
+
+<script>
+  /*
+    Atividade 4
+
+        4. Crie 2 vetores um com (vetor a) 3 posições e outro com (vetor b) 7 posições,
+         após adicione todos os elemtnos do vetor b no vetor a.
+    */
+
+  let a = [];
+  let b = [];
+
+  for (let x = 0; x < 7; x++) {
+    b.push(Math.floor(Math.random() * 100));
+    if (x < 3) {
+      a.push(Math.floor(Math.random() * 100));
+    }
+  }
+
+  console.log(`Os vetores A e B respectivamente são: `);
+  console.log(a);
+  console.log(b);
+
+  console.log(`Adicionando os valores do B em A.....`);
+  for (let x = 0; x < b.length; x++) {
+    a.push(b[x]);
+  }
+  console.log(`O vetor A recebendo os valores do vetor B resulta em: `);
+  console.log(a);
+</script>

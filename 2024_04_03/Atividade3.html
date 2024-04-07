@@ -1,8 +1,7 @@
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 <script>
-
-    /*
+  /*
         Ativiade 3
     Crie um vetor com 10 posições e adicione numeros aleatorios 
      após inverta os valores do vetor trocando os valores de posição
@@ -12,18 +11,19 @@
   for (let x = 0; x < 10; x++) {
     numeros.push(Math.floor(Math.random() * 100));
   }
-console.log(numeros)
-let troca = numeros.length - 1
+  console.log(`Os números são: `);
+  console.log(numeros);
+  let troca = numeros.length - 1;
+  
+  console.log(`Trocando....`);
+  
+  for (let x = 0; x < numeros.length / 2; x++, troca--) {
 
-for(let x = 0 ; x < numeros.length; x++ , troca--){
-    let salva = numeros[x]
+    let salva = numeros[x];
+    numeros[x] = numeros[troca];
+    numeros[troca] = salva;
 
-    console.log(x, troca, )
-    
-    numeros[x] = numeros[troca]
-    numeros[troca] = salva
-    console.log(numeros[x], numeros[troca] )
-}
-console.log(numeros)
-   
-</script>       
+  }
+  console.log(`Os números em suas novas posições: `);
+  console.log(numeros);
+</script>
