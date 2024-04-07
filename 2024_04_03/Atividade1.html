@@ -1,43 +1,34 @@
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 <script>
-
-    /*
+  /*
     Atividade 1
     Crie um vetor com 10 posições e adicione numeros aleatorios,
      utilizando 'for' ordene o vetor em ordem crescente trocando os valores de posição.
     */
 
-    let numeros = [];
+  let numeros = [];
 
-    for (let x = 0; x < 10; x++) {
-        //numeros.push(Number(prompt("Insira um número aleatório:")))
-        numeros.push(Math.floor(Math.random() * 100));
+  for (let x = 0; x < 10; x++) {
+    //numeros.push(Number(prompt("Insira um número aleatório:")))
+    numeros.push(Math.floor(Math.random() * 100));
 
-        console.log(`Sorteando...`)
-        console.log(numeros)
-    }
-    console.log(`Os números aleatoriamente são ${numeros}`)
-    console.log(numeros)
+    console.log(`Sorteando...`);
+    console.log(numeros);
+  }
+  console.log(`Os números aleatoriamente são ${numeros}`);
+  console.log(numeros);
 
-
-    for (let x = 0; x < numeros.length; x++) {
-
-        for (let y = 0; y < numeros.length; y++)
-
-            if (numeros[x] < numeros[y]) {
-                let salva = numeros[x]
-                numeros[x] = numeros[y]
-                numeros[y] = salva
-            }
-        console.log(`Organizando.... `)
-        console.log(numeros)
-    }
-    console.log(`A sequencia de forma crescente fica: `)
-    console.log(numeros)
-
-
-
-
-
+  for (let x = 0; x < numeros.length; x++) {
+    for (let y = 0; y < numeros.length; y++)
+      if (numeros[x] < numeros[y]) {
+        let salva = numeros[x];
+        numeros[x] = numeros[y];
+        numeros[y] = salva;
+      }
+    console.log(`Organizando.... `);
+    console.log(numeros);
+  }
+  console.log(`A sequencia de forma crescente fica: `);
+  console.log(numeros);
 </script>

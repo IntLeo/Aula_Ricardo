@@ -14,15 +14,13 @@
   console.log(`Os números são: `);
   console.log(numeros);
   let troca = numeros.length - 1;
-  
-  console.log(`Trocando....`);
-  
-  for (let x = 0; x < numeros.length / 2; x++, troca--) {
 
+  console.log(`Trocando....`);
+
+  for (let x = 0; x < numeros.length / 2; x++, troca--) {
     let salva = numeros[x];
     numeros[x] = numeros[troca];
     numeros[troca] = salva;
-
   }
   console.log(`Os números em suas novas posições: `);
   console.log(numeros);

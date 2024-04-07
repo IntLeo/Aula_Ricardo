@@ -14,9 +14,9 @@
   numeros[1] = numeros[5];
   numeros[0] = numeros[9];
 
-  console.log(`A seqência de números aleatorios é: `)
+  console.log(`A seqência de números aleatorios é: `);
   console.log(numeros);
-  console.log(`Números repetidos serão apagados... `)
+  console.log(`Números repetidos serão apagados... `);
 
   let f = 0;
   let cont = 0;
@@ -28,11 +28,11 @@
       }
       if (numeros[x] == numeros[y] && cont >= 2) {
         numeros.splice(numeros.indexOf((f = numeros[y])), 1);
-        console.log(`Existem mais de um número ${f} Apagando...`)
+        console.log(`Existem mais de um número ${f} Apagando...`);
       }
     }
     cont = 0;
   }
   console.log(`Resultando na seguinte sequência`);
-  console.log(numeros)
+  console.log(numeros);
 </script>

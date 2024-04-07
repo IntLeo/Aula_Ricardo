@@ -1,30 +1,28 @@
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 <script>
-
-    /*
+  /*
         Atividade 5
      
         Crie um vetor de 10 posições com números aleatório após realiza a soma de todos os elementos. 
     
     */
 
-     let numeros = [];
+  let numeros = [];
 
   for (let x = 0; x < 10; x++) {
     numeros.push(Math.floor(Math.random() * 100));
   }
-console.log(numeros)
-numeros.push(0)
-for(let x = 0; x < numeros.length-1; x++){
-    numeros[numeros.length-1] = numeros[numeros.length-1] + numeros[x]
-   
-}
+  console.log(`Os números são: `);
+  console.log(numeros);
 
-numeros.splice(0,10)
+  numeros.push(0);
+  console.log(`Somando....`);
+  for (let x = 0; x < numeros.length - 1; x++) {
+    numeros[numeros.length - 1] = numeros[numeros.length - 1] + numeros[x];
+  }
 
-
-console.log(numeros)
-
-   
+  numeros.splice(0, 10);
+  console.log(`A soma de todos os números resulta em: `);
+  console.log(numeros);
 </script>
