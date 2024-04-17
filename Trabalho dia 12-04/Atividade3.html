@@ -1,0 +1,41 @@
+<script>
+  /* Leonardo Greinert, Leonardo Machado, Leonardo Ferrari, Juliano Welke
+3. Crie um algoritmo que pergunte a idade de 10 pessoas, mostrando no final: 
+a) Qual é a média de idade do grupo
+b) Quantas pessoas tem mais de 18 anos
+c) Quantas pessoas tem menos de 5 anos
+d) Qual foi a maior idade digitada */
+
+  let menordeidade = 0;
+  let maiordeidade = 0;
+  let maioridade = 0;
+  let vetor = [];
+  let soma = 0;
+
+  for (let i = 0; i < 10; i++) {
+    let idade = Number(prompt("Qual a sua idade??"));
+    vetor.push(idade);
+    if (idade < 5) {
+      menordeidade++;
+    }
+    if (idade > 18) {
+      maiordeidade++;
+    }
+    if (idade > maioridade) {
+      maioridade = idade;
+    }
+  }
+
+  for (let j = 0; j < vetor.length; j++) {
+    soma += vetor[j];
+  }
+  /* let soma = vetor.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);  <<<<<<< poderia ser feito assim, mas com o "for" fica mais facil*/
+
+  let media = soma / 10;
+
+  console.log(`A maior idade é ${maioridade}`);
+  console.log(`A quantidade de pessoas com idade inferior a 5 anos é ${menordeidade}`);
+  console.log(`A quantidade de pessoas com a idade superior a 18 anos é ${maiordeidade}`);
+  console.log(`A media das 10 pessoas é de ${media} anos`);
+  console.log(`As idades informadas foram  ${vetor}`);
+</script>

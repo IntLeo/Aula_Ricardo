@@ -1,0 +1,26 @@
+<meta charset="utf-8" />
+
+<script>
+  /*
+Atividade 5
+
+    Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse 80Km/h,
+exiba uma mensagem dizendo que o usuário foi multado. Nesse caso, exiba o valor da multa,
+cobrando R$5 por cada Km acima da velocidade permitida. Caso passe mais de 20%
+do limite de 80km o valor da multa pasa a ser R$ 8,00 por cada km acima da velocidade permitida.
+
+    Integrantes: Leonardo Greinert, Leonardo Machado, Leonardo Ferrari, Juliano Welke
+*/
+
+  let velocidade = Number(prompt("Insira a velocidade: "));
+
+  if (velocidade > 80 && velocidade <= 96) {
+    console.log(`Você foi multado!! velocidade de ${velocidade} km/hr.`);
+    let valor = (velocidade - 80) * 5;
+    console.log(`Gerando uma multa de R$${valor} reais.`);
+  } else if (velocidade > 96) {
+    console.log(`Você foi multado!! velocidade de ${velocidade} km/hr.`);
+    let valor = (velocidade - 80) * 8;
+    console.log(`Gerando uma multa de R$${valor} reais.`);
+  } else console.log(`Dentro da velocidade com ${velocidade} km/hr`);
+</script>

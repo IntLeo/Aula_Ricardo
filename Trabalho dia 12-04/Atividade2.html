@@ -1,0 +1,29 @@
+<script>
+/*Leonardo Greinert, Leonardo Machado, Leonardo Ferrari, Juliano Welke
+ Faça um programa que pergunte o preco de 8 produtos e armazene os valores em um vetor. No final,
+ mostre na tela qual foi o maior e qual foi o menor preco digitados. */
+
+let vetor = []
+let menorvalor = 10000
+let maiorvalor = 0
+let valortotal = 0
+for(let i = 1; i < 9; i++){
+    preco = parseFloat(prompt(`Qual o valor do produto N ${i}`))
+    vetor.push(preco)
+    if(preco > maiorvalor){
+        maiorvalor = preco
+    }
+
+    if(preco < menorvalor){
+        menorvalor = preco
+    }
+valortotal += preco;
+}
+
+console.log(`O maior valor foi de R$ ${maiorvalor}`)
+console.log(`O menor valor foi de R$ ${menorvalor}`)
+console.log(`O valor somando todos os produtos é de R$ ${valortotal} sendo os Valores:`)
+console.log(vetor)
+
+
+</script>
