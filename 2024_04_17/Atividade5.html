@@ -3,8 +3,21 @@
 <script>
 
     /*
-
+Atividade 5
+Crie um programa que leia a idade de 8 pessoas e guarde-as em um vetor. No final, mostre:
+a) Qual é a média de idade das pessoas cadastradas
+b) Em quais posições temos pessoas com mais de 25 anos
+c) Qual foi a maior idade digitada (podem haver repetições)
+d) Em que posições digitamos a maior idade
     */
+   let media = 0 
+   let idade = []
 
-   
+   for(let x = 0; x < 8; x++)
+   {
+    idade.push(Number(prompt(`Digite a idade da pessoa nº ${x + 1}`)))
+    media = media + idade[x]
+   }
+
+   console.log(idade)
 </script>

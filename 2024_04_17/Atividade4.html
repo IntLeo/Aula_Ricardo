@@ -1,12 +1,18 @@
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 <script>
-
-    /*
+  /*
 Atividade 4
 Crie um programa que preencha automaticamente (usando lógica, não apenas atribuindo diretamente)
  um vetor numérico com 15 posições com os primeiros elementos da sequência de Fibonacci
     */
-
-   
+  let Fibonacci = [1, 1]; //necessita dois valores para ponto de partida
+  let Ant = 1;
+  for (let x = 0; x < 13; x++) 
+  {
+    // "1,1,2,3,5,8,13,21,34,55,89,144,233,377,610"
+    Fibonacci.push(Fibonacci[x] + Fibonacci[x + 1]);
+  }
+  console.log("A sequência Fibonacci fica da seguinte forma: ")
+  console.log(Fibonacci);
 </script>
