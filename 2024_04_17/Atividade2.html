@@ -1,0 +1,25 @@
+<meta charset="utf-8" />
+
+<script>
+  /*
+Atividade 2
+ Crie dois vetores a e b com 30 numeros aleatórios.
+ Após gere um vetor c com a soma de cada uma das posições.
+ (imagem que está na atividade)
+    */
+  let a = [];
+  let b = [];
+  let c = [];
+  for (let x = 0; x < 30; x++) {
+    a.push(Math.ceil(Math.random() * 100));
+    b.push(Math.ceil(Math.random() * 100));
+  }
+  console.log(`Os vetores "a" e "b" são respectivamente:`);
+  console.log(a);
+  console.log(b);
+  for (let x = 0; x < a.length; x++) {
+    c.push(a[x] + b[x]);
+  }
+  console.log(`A soma dos lugares resula em respectivamente:`);
+  console.log(c);
+</script>
