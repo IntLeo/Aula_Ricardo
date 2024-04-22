@@ -1,13 +1,32 @@
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 <script>
-
-    /*
+  /*
 Atividade 7
 No Javascript para gerar números randômicos de 0 até 100 utiliza-se o seguinte instrução
 Math.ceil(Math.random() * 100) sendo assim crie um vetor A e outro vetor B 
 e insira 5 valores randômicos após crie um vetor C com os números que são iguais nos dois vetores.
     */
+  let a = [];
+  let b = [];
+  let c = [];
 
-   
+  for (let x = 0; x < 5; x++) {
+    a.push(Math.ceil(Math.random() * 100));
+    b.push(Math.ceil(Math.random() * 100));
+  }
+
+  for (let x = 0; x < 5; x++) {
+    for (let y = 0; y < 5; y++) {
+      if (a[x] == b[y]) {
+        let numero = a[x];
+        c.push(numero);
+      }
+    }
+  }
+  console.log(`Vetor A = ${a}`);
+  console.log(`Vetor B = ${b}`);
+  if (c == false) {
+    console.log(`Não houve ocorrência igual`);
+  } else console.log(`Vetor C = ${c}`);
 </script>

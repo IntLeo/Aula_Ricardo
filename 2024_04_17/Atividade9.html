@@ -9,5 +9,10 @@ dos salários. O programa deve pedir para o usuário informar o valor do salári
 porcentagem de acréscimo, calcule e mostre o resultado.
     */
 
-   
+    let salario = Number(prompt("Insira o Salário a ser ajustado: "));
+    let porcentagem = Number(prompt("Insira a % do acrescimo: "));
+
+console.log(`Salário atual de R$${salario} reais.`);
+console.log(`Com ${porcentagem}% de ajuste o novo salário será de R$${salario + (salario*(porcentagem/100))} reais.`)
+
 </script>

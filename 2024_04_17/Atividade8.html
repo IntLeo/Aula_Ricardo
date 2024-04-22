@@ -1,13 +1,15 @@
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 <script>
-
-    /*
+  /*
 Atividade 8
 Crie um programa para converter dólar em reais. 
-O programa deve solicitar para o usuário informar um valor em 
-dólares e após a cotação do dólar. Após realize o cálculo convertendo o valor em reais
+O programa deve solicitar para o usuário informar um valor em dólares e após a cotação do dólar.
+Após realize o cálculo convertendo o valor em reais
     */
+  let dolar = Number(prompt("Insira o valor em Dolar a ser consultado: "));
+  let cotacao = Number(prompt("Insira a cotação do Dolar: "));
 
-   
+  console.log(`Convertedor de Reais... `);
+  console.log(`US$${dolar} dolares é um equivalente a R$${(dolar * cotacao).toFixed(2)} reais.`);
 </script>
