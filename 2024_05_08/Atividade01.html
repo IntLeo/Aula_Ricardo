@@ -1,0 +1,33 @@
+<meta charset="utf-8" />
+
+<script>
+  /*
+    Atividade 01
+    1. Faça um cadatro de pessoa com 
+    nome,idade e telefone. Armazene em um array. Após mostre os valores cadastrados.
+    */
+  let save = [];
+
+  for (let x = 1; x <= 3; x++) {
+    let name = prompt(`Insira o ${x}º nome: `);
+    let year = prompt(`Insira a ${x}º idade: `);
+    let phone = prompt(`Insira o ${x}º telefone: `);
+
+    let register = {
+      name: name,
+      year: year,
+      phone: phone,
+    };
+
+    save.push(register);
+  };
+  console.log(`Todo o registro: `);
+  console.log(save);
+
+  for (let y = 0; y < save.length; y++) {
+    console.log(`A ${y + 1}º pessoa possui os seguintes dados: 
+    Nome: ${save[y].name} 
+    Idade: ${save[y].year} 
+    Telefone: ${save[y].phone}`);
+  };
+</script>

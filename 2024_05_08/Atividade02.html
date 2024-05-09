@@ -1,0 +1,45 @@
+<meta charset="utf-8" />
+
+<script>
+  /*
+    Atividade 02
+    Faca um cadastro de tarefas (nome, descricao).
+     Armazene em um array. Após mostre os valores cadastrados.
+    */
+
+  let storage = [];
+  let unit = Number(prompt("Insira quantos produtos deseja cadastrar: "));
+
+  for (let x = 0; x < unit; x++) {
+    let product = prompt(`Insira o nome do ${x + 1}º produto: `);
+    let description = prompt(`Insira a descrição do ${x + 1}º produto: `);
+
+    let register = {
+      product: product,
+      description: description,
+    };
+
+    storage.push(register);
+    alert(`Produto cadastrado!`);
+  }
+  let request = 0;
+
+  while (true) {
+    request = prompt(`Insira um numero que referente ao produto cadastrado!
+   Seguindo pelo princípio que o 1º produto é 1
+   Existem ${storage.length} produtos cadastrados!
+   Para sair digite: sair`);
+   
+    if (request == "sair" || request == "Sair") {
+      break;
+    }
+    if (request <= 0 || request > storage.length) {
+      alert("Opção invalida! tente outra...");  
+      continue;
+    }
+    alert(`Nome do Produto: ${storage[request - 1].product},
+   Sua Descrição: ${storage[request - 1].description}`);
+  }
+  console.log(storage);
+  alert("Fim");
+</script>
