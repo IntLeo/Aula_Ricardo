@@ -28,9 +28,8 @@ let idade = [];
   console.log(`As idades maiores a 25 se encontram nas seguintes posições: `);
   for (let x = 0; x < idade.length; x++) {
     if (idade[x] > 25) {
-      let y = idade[x];
-
-      console.log(idade.indexOf(y, x));
+      
+      console.log(idade.indexOf(idade[x], x));
     }
   }
   for (let x = 0; x < idade.length; x++) {
