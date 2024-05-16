@@ -5,20 +5,70 @@
     /*
     Criar um menu que tenha:
 
-    1) Para inserir
+    1) Para inserir - id - nome - 3 notas
     2) Para listar
     3) Para excluir
     0) para sair
 
     Utilize funções!
     */
+    let lista = [];
 
-    while(){
+    while (true) {
+        let option = menu()
 
+        if (option == 1) {
+            inserir();
+        } else if (option == 2) {
+            listar();
+        } else if (option == 3) {
+            alert("3")
+        } else if (option == 0) {
+            alert("Saiu!!")
+            break
+
+        }
     }
 
-    function menu(){
-        alert("1) Para inserir \n2) Para listar \n3) Para excluir \n0) para sair");
+    function menu() {
+        let select = Number(prompt("Menu: \n1) Para inserir \n2) Para listar \n3) Para excluir \n0) para sair"));
+        if (select > 3 || select < 0) {
+            alert("Opção inválida!");
+        }
+        return select
     }
-   
+
+    function inserir() {
+        let nota = [];
+
+        let id = prompt("Insira o ID: ");
+        let nome = prompt("Insira o nome: ");
+
+        for (let x = 0; x < 3; x++) {
+            let temp = parseInt(prompt(`Insira a ${x + 1}° nota!`));
+            nota.push(temp);
+        }
+
+        let insert = {
+            id: id,
+            nome: nome,
+            nota: nota
+        }
+
+        lista.push(insert);
+    }
+
+    function listar(){
+        let acc = ``;
+
+        for(let z = 0; z < lista.length; z++){
+            acc += (`N° ${z} 
+            \nID: ${lista[z].id} 
+            \nNome: ${lista[z].nome} 
+            \nNota 1: ${lista[z].nota[0]} 
+            \nNota 2: ${lista[z].nota[1]} 
+            \nNota 3: ${lista[z].nota[2]}\n\n`)
+        }
+        alert(acc)
+    }
 </script>
