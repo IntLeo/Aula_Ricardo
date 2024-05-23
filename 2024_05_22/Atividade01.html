@@ -1,0 +1,133 @@
+<meta charset="utf-8" />
+
+<script>
+  /*
+- pode ser feito individual ou em grupo de até 4 pessoas
+- apenas um do grupo entrega
+- no arquivo deve ter o nome dos integrantes
+
+1. Crie um programa para cadastrar alunos (matricula, nome, idade, notas 3 notas) 
+o programa vai ter os seguintes item do menu:
+
+1) cadastrar aluno com as notas
+2) editar os dados do aluno e das notas
+3) excluir um aluno pelo número da matricula
+4) mostrar a média de todas as notas dos alunos
+5) mostrar o aluno com a maior média
+6) mostrar a lista dos alunos reprovados (considere média 7)
+7) mostrar a lista dos alunos em ordem alfabética juntamente com a média das notas
+    */
+
+  let lista = [];
+
+  while (true) {
+    let option = menu();
+
+    if (option == 1) {
+      cadastrar();
+    } else if (option == 2) {
+      editar();
+    } else if (option == 3) {
+      excluir();
+    } else if (option == 4) {
+      media();
+    } else if (option == 5) {
+      maior();
+    } else if (option == 6) {
+      reprovados();
+    } else if (option == 7) {
+      ordem();
+    } else if (option == 0) {
+      alert("Saiu!!");
+      break;
+    }
+  }
+
+  function menu() {
+    let select = Number(
+      prompt(`Menu: 
+       1) Para cadastrar 
+        2) Para editar
+        3) Para excluir
+        4) Para ver a média geral
+        5) Para mostrar aluno com maior média
+        6) Para mostrar lista dos alunos reprovados
+        7) Para mostrar a lista em ordem alfabética e suas médias
+        0) para sair`)
+    );
+
+    if (select > 7 || select < 0) {
+      alert("Opção inválida!");
+    }
+    return select;
+  }
+
+  function cadastrar() {
+    // matricula, nome, idade, notas 3 notas
+    let nota = [];
+
+    let mat = parseInt(prompt("Insira a Matricula "));
+    let name = prompt("Insira o Nome: ");
+    let year = parseInt(prompt("Insira a Idade: "));
+
+    alert("Agora Insira 3 notas");
+    for (let x = 0; x < 3; x++) {
+      let temp = parseInt(prompt(`Insira a ${x + 1}° nota!`));
+      nota.push(temp);
+    }
+
+    lista.push({
+      mat: mat,
+      name: name,
+      year: year,
+      nota: nota,
+    });
+    console.log(lista);
+  }
+
+  function editar() {
+    let edit = Number(prompt(`Insira a matriculda referente a edição: `));
+    let idd = indice(edit);
+
+    if (idd != -1) {
+      let refresh = parseInt(prompt(`Insira a nova Matricula:`, lista[idd].mat));
+      lista[idd].mat = refresh;
+
+      refresh = parseInt(prompt(`Insira o novo Nome:`, lista[idd].name));
+      lista[idd].name = refresh;
+
+      refresh = parseInt(prompt(`Insira o novo Ano:`, lista[idd].year));
+      lista[idd].year = refresh;
+
+      refresh = parseInt(prompt(`Insira a 1° Nota:`, lista[idd].nota[0]));
+      lista[idd].nota[0] = refresh;
+
+      refresh = parseInt(prompt(`Insira a 2° Nota:`, lista[idd].nota[1]));
+      lista[idd].nota[1] = refresh;
+
+      refresh = parseInt(prompt(`Insira a 3° Nota:`, lista[idd].nota[2]));
+      lista[idd].nota[2] = refresh;
+
+      alert("Atualizado!!");
+    } else alert("Não encontrado!");
+  }
+
+  function ordem() {
+    for(let x = 0; x < lista.length; x++){
+      for(let y = 1; y < lista.length; y++){
+        lista[x].name
+      }
+    }
+  }
+
+  function indice(x) {
+    for (let y = 0; y < lista.length; y++) {
+      if (lista[y].mat == x) {
+        alert("Matricula encontrada!");
+        return y;
+      }
+    }
+    alert("Matricula não encontrada!");
+    return -1;
+  }
+</script>
