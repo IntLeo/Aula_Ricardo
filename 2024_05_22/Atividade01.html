@@ -18,7 +18,7 @@ o programa vai ter os seguintes item do menu:
 6) mostrar a lista dos alunos reprovados (considere média 7)
 7) mostrar a lista dos alunos em ordem alfabética juntamente com a média das notas
     */
-debugger
+
   let lista = [];
 
   while (true) {
@@ -45,9 +45,7 @@ debugger
   }
 
   function indice(x){
-alert(x)
-    for(let y = 0; y > 4; y++){
-        alert(y)
+    for(let y = 0; y > lista.length; y++){
         if(lista[y].mat == x){
             alert("Matricula encontrada!")
             return y
@@ -103,13 +101,13 @@ alert(x)
 
   function editar() {
     let edit = parseInt(prompt(`Insira a matriculda que deseja editar: `))
-    indice(edit);
+    let indice = indice(edit);
 
-if(edit != -1){
+if(indice != -1){
     let alt = confirm(`Deseja alterar a Matricula?`);
     if(alt = 1){
         let matNew = parseInt(prompt(`Insira a nova Matricula: `));
-        lista[edit].mat = matNew
+        lista[indice].mat = matNew
         alert("Alterado!")
     }} else alert()
   }
