@@ -19,9 +19,9 @@ o programa vai ter os seguintes item do menu:
     */
 
   let lista = [];
-
-  while (true) {
-    let option = menu();
+  let option = -1
+  while (option != 0) {
+    option = menu();
 
     if (option == 1) {
       cadastrar();
@@ -37,16 +37,13 @@ o programa vai ter os seguintes item do menu:
       reprovados();
     } else if (option == 7) {
       ordem();
-    } else if (option == 0) {
-      alert("Saiu!!");
-      break;
-    }
+    } 
   }
 
   function menu() {
     let select = Number(
       prompt(`Menu: 
-       1) Para cadastrar 
+        1) Para cadastrar 
         2) Para editar
         3) Para excluir
         4) Para ver a média geral
@@ -67,22 +64,33 @@ o programa vai ter os seguintes item do menu:
     let nota = [];
 
     let mat = parseInt(prompt("Insira a Matricula "));
+      for(let z = 0; 0 < lista.length; z++){
+        if(lista[z].mat == mat){
+          alert("Esta matricula já existe!");
+          mat = parseInt(prompt("Insira a Matricula "));
+        }
+      }
     let name = prompt("Insira o Nome: ");
     let year = parseInt(prompt("Insira a Idade: "));
+    let media = 0
 
     alert("Agora Insira 3 notas");
     for (let x = 0; x < 3; x++) {
       let temp = parseInt(prompt(`Insira a ${x + 1}° nota!`));
+      media += temp
       nota.push(temp);
     }
+
+    media /= nota.length
 
     lista.push({
       mat: mat,
       name: name,
       year: year,
       nota: nota,
+      media: media,
     });
-    console.log(lista);
+  1
   }
 
   function editar() {
@@ -93,7 +101,7 @@ o programa vai ter os seguintes item do menu:
       let refresh = parseInt(prompt(`Insira a nova Matricula:`, lista[idd].mat));
       lista[idd].mat = refresh;
 
-      refresh = parseInt(prompt(`Insira o novo Nome:`, lista[idd].name));
+      refresh = prompt(`Insira o novo Nome:`, lista[idd].name);
       lista[idd].name = refresh;
 
       refresh = parseInt(prompt(`Insira o novo Ano:`, lista[idd].year));
@@ -108,16 +116,31 @@ o programa vai ter os seguintes item do menu:
       refresh = parseInt(prompt(`Insira a 3° Nota:`, lista[idd].nota[2]));
       lista[idd].nota[2] = refresh;
 
+      lista[idd].media = lista[idd].nota[0] + lista[idd].nota[1] + lista[idd].nota[2] / 3
+
       alert("Atualizado!!");
     } else alert("Não encontrado!");
   }
 
   function ordem() {
+    let list = [];
     for(let x = 0; x < lista.length; x++){
-      for(let y = 1; y < lista.length; y++){
-        lista[x].name
+      let slv = lista[x].name
+        list.push(slv)    
       }
+      list.sort();
+      let msg = `Ordenados: \n`;
+      for(let y = 0; y < lista.length; y++){
+        for(let z = 1; z < lista.length; z++){
+          if(list[y] == lista[z].name){
+            let slv = lista[y].name
+            lista[y].name = lista[z].name
+            lista[z].name = slv
+          }
+        }
     }
+    console.log(lista)
+    console.log(list + " list")
   }
 
   function indice(x) {
