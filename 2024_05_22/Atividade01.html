@@ -19,7 +19,7 @@ o programa vai ter os seguintes item do menu:
     */
 
   let lista = [];
-  let option = -1
+  let option = -1;
   while (option != 0) {
     option = menu();
 
@@ -37,12 +37,13 @@ o programa vai ter os seguintes item do menu:
       reprovados();
     } else if (option == 7) {
       ordem();
-    }
+    } else alert("Saiu!!");
   }
 
   function menu() {
     let select = Number(
-      prompt(`Menu: 
+      prompt(
+        `Menu: 
         1) Para cadastrar 
         2) Para editar
         3) Para excluir
@@ -50,7 +51,9 @@ o programa vai ter os seguintes item do menu:
         5) Para mostrar aluno com maior média
         6) Para mostrar lista dos alunos reprovados
         7) Para mostrar a lista em ordem alfabética e suas médias
-        0) para sair`)
+        0) para sair`,
+        0
+      )
     );
 
     if (select > 7 || select < 0) {
@@ -60,28 +63,31 @@ o programa vai ter os seguintes item do menu:
   }
 
   function cadastrar() {
-    // matricula, nome, idade, notas 3 notas
+    alert("Será necessario: Matricula, Nome, Idade e 3 notas");
+    // matricula, nome, idade, 3 notas
     let nota = [];
 
-    let mat = parseInt(prompt("Insira a Matricula "));
-    for (let z = 0; 0 < lista.length; z++) {
+    let mat = parseInt(prompt("Insira o número da Matricula: "));
+
+    for (let z = 0; z < lista.length; z++) {
       if (lista[z].mat == mat) {
-        alert("Esta matricula já existe!");
-        mat = parseInt(prompt("Insira a Matricula "));
+        alert("Está matricula já está cadastrada!");
+        mat = parseInt(prompt("Insira o número da Matricula: "));
       }
     }
+
     let name = prompt("Insira o Nome: ");
     let year = parseInt(prompt("Insira a Idade: "));
-    let media = 0
+    let media = 0;
 
-    alert("Agora Insira 3 notas");
+    //alert("Agora Insira 3 notas");
     for (let x = 0; x < 3; x++) {
-      let temp = parseInt(prompt(`Insira a ${x + 1}° nota!`));
-      media += temp
+      let temp = parseInt(prompt(`Insira a ${x + 1}° nota:`));
+      media += temp;
       nota.push(temp);
     }
 
-    media /= nota.length
+    media /= nota.length;
 
     lista.push({
       mat: mat,
@@ -90,7 +96,7 @@ o programa vai ter os seguintes item do menu:
       nota: nota,
       media: media,
     });
-    1
+    alert("Cadastrado!!")
   }
 
   function editar() {
@@ -98,7 +104,9 @@ o programa vai ter os seguintes item do menu:
     let idd = indice(edit);
 
     if (idd != -1) {
-      let refresh = parseInt(prompt(`Insira a nova Matricula:`, lista[idd].mat));
+      let refresh = parseInt(
+        prompt(`Insira a nova Matricula:`, lista[idd].mat)
+      );
       lista[idd].mat = refresh;
 
       refresh = prompt(`Insira o novo Nome:`, lista[idd].name);
@@ -116,7 +124,8 @@ o programa vai ter os seguintes item do menu:
       refresh = parseInt(prompt(`Insira a 3° Nota:`, lista[idd].nota[2]));
       lista[idd].nota[2] = refresh;
 
-      lista[idd].media = lista[idd].nota[0] + lista[idd].nota[1] + lista[idd].nota[2] / 3
+      lista[idd].media =
+        lista[idd].nota[0] + lista[idd].nota[1] + lista[idd].nota[2] / 3;
 
       alert("Atualizado!!");
     } else alert("Não encontrado!");
@@ -126,41 +135,76 @@ o programa vai ter os seguintes item do menu:
     let exc = Number(prompt(`Insira a matriculda que deseja excluir: `));
     let idd = indice(exc);
 
-    let slv = confirm(`Deseja realmente excluir a matricula: ${lista[idd].mat}?`)
+    let slv = confirm(
+      `Deseja realmente excluir a matricula: ${lista[idd].mat}?`
+    );
     if (slv == 1) {
       lista.splice(idd, 1);
-      alert(`Excluido com sucesso!`)
-    } else alert(`Operação cancelada!`)
+      alert(`Excluido com sucesso!`);
+    } else alert(`Operação cancelada!`);
   }
-
-  function ordem() {
-    
-    let list = [];
-    for (let x = 0; x < lista.length; x++) { // Colocar apenas os nomes no Vetor
-      let slv = lista[x].name
-      list.push(slv)
+  function media() {
+    let slv = 0;
+    for (let x = 0; x < lista.length; x++) {
+      slv = slv + lista[x].media;
     }
-    list.sort();  // função que os coloca em orgem 
+    alert(`A média geral é de: ${slv.toFixed()}`);
+  }
+  function maior() {
+    let slv = 0;
+    let z = 0;
+    for (let x = 0; x < lista.length; x++) {
+      if (lista[x].media > z) {
+        slv = x;
+      }
+    }
+    alert(`O Aluno com maior Média é respectivamente\n Matricula: ${lista[slv].mat}\n Nome: ${lista[slv].name}\n Média de ${lista[slv].media.toFixed(2)}\n Possui ${lista[slv].year} anos`);
+  }
+  function reprovados() {
+    let list = [];
+    for (let x = 0; x < lista.length; x++) {
+      if (lista[x].media < 7) {
+        list.push(lista[x]);
+      }
+    }
+    let msg = `Lista de alunos reprovados (Média 7)\n `;
+    for (let x = 0; x < list.length; x++) {
+      msg += `Nome: ${list[x].name}, com média de ${list[x].media.toFixed()}, possui ${lists[x].year} anos\n `;
+    }
+    alert(msg);
+  }
+  function ordem() {
+    let list = [];
+    let lists = lista; // criado lists para não organizar o vetor principal!
+    for (let x = 0; x < lists.length; x++) {
+      // Colocar apenas os nomes no Vetor
+      let slv = lists[x].name;
+      list.push(slv);
+    }
+    list.sort(); // função que os coloca em ordem
 
-    for (let y = 0; y < lista.length; y++) { // Comparação entre os dois para alocar em Ordem a Lista principal
-      for (let z = 1; z < lista.length; z++) {
-        if (list[y] == lista[z].name) {
-          let slv = lista[y].name
-          lista[y].name = lista[z].name
-          lista[z].name = slv
+    for (let y = 0; y < lists.length; y++) {
+      // Comparação entre os dois para alocar em Ordem a Lista principal
+      for (let z = 1; z < lists.length; z++) {
+        if (list[y] == lists[z].name) {
+          let slv = lists[y];
+          lists[y] = lists[z];
+          lists[z] = slv;
         }
       }
     }
 
     let msg = `Ordenados: \n`;
 
-    for (let res = 0; res < lista.length; res++) {//Mostra o vetor em ordem seu Nome e sua Média!
-      //let slv = res[0].media
-      msg += `Nome: ${res[0].name} e sua Média: ${res[0].media.toFixed()}\n`
+    for (let res = 0; res < lists.length; res++) {
+      //Mostra o vetor em ordem seu Nome e sua Média!
+      msg += `Nome: ${lists[res].name}, sua Média: ${lists[res].media.toFixed()}\n`;
     }
+    alert(msg);
   }
 
-  function indice(x) {// Utilizado para localizar o indice do matricula
+  function indice(x) {
+    // Utilizado para localizar o indice do matricula
     for (let y = 0; y < lista.length; y++) {
       if (lista[y].mat == x) {
         alert("Matricula encontrada!");
