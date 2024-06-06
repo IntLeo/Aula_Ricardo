@@ -1,0 +1,101 @@
+<meta charset="utf-8">
+
+<script>
+
+    /*
+    4. Escreva um programa que:
+
+Peça ao usuário para digitar a quantidade de estudantes.
+Para cada estudante, peça ao usuário para digitar três notas.
+Calcule a média das notas de cada estudante.
+Determine a situação de cada estudante:
+    Aprovado (média ≥ 7.0)
+    Recuperação (5.0 ≤ média < 7.0)
+    Reprovado (média < 5.0)
+    
+    Ao final, exiba:
+A média de notas de cada estudante e sua respectiva situação.
+A quantidade total de estudantes aprovados, em recuperação e reprovados.
+
+    */
+    let estudantes = parseInt(prompt("Digite o número de estudantes: "));
+    let geral = [];
+
+    for (let x = 1; x <= estudantes; x++) { 
+
+        alert(`Referente ao ${x}º aluno digite 3 notas!`);
+        let res = 0;
+
+        for (let y = 1; y <= 3; y++) {
+            let nota = Number(prompt(`Digite a ${y}° nota: `));
+            res += nota;
+        }
+        res = res / 3;
+
+        geral.push(
+            {
+                aluno: x,
+                media: res,
+                situacao: NaN
+            }
+        )
+    }
+    /*
+                Aprovado (média ≥ 7.0)
+                Recuperação (5.0 ≤ média < 7.0)
+                Reprovado (média < 5.0)
+            */
+    for (let x = 0; x < geral.length; x++) {
+        let res = geral[x].media;
+        if (res < 5) {
+            geral[x].situacao = `Reprovado!`;
+        } else if (res >= 5 && res < 7) {
+            geral[x].situacao = `Recuperação!`;
+        } else {
+            geral[x].situacao = `Aprovado!`;
+        }
+    }
+    let msg = `Resultado:\n`;
+    for (let x = 0; x < geral.length; x++) {
+        msg += `Aluno número ${geral[x].aluno}, com média de ${geral[x].media}, Status: ${geral[x].situacao}\n`;
+    }
+    alert(msg);
+    console.log(msg);
+    let geral1 = []
+    geral1.push(
+            {
+                reprovado: 0,
+                recuperacao: 0,
+                aprovado: 0
+            })
+    for(let x = 0; x < geral.length; x++){
+
+        if(geral[x].situacao == `Reprovado!`){
+            geral1[0].reprovado += 1;
+        }else if(geral[x].situacao == `Recuperação!`){
+            geral1[0].recuperacao += 1;
+        }else if(geral[x].situacao == `Aprovado!`){
+            geral1[0].aprovado += 1;
+        }
+    }
+     msg = `Resulta em:\n`;
+        if(geral1[0].aprovado == 0){
+            msg += `Nenhum aluno foi Aprovado!\n`;
+        }else if(geral1[0].aprovado == 1){
+            msg += `1 aluno apenas foi Aprovado!\n`;
+        }else msg += `${geral1[0].aprovado} alunos foram Aprovados!\n`;
+
+        if(geral1[0].recuperacao == 0){
+            msg += `Nenhum aluno ficou de Recuperação!\n`;
+        }else if(geral1[0].recuperacao == 1){
+            msg += `1 aluno apenas ficou de Recuperação!\n`;
+        }else msg += `${geral1[0].recuperacao} alunos ficaram em Recuperação!\n`;
+
+        if(geral1[0].reprovado == 0){
+            msg += `Nenhum aluno foi Reprovado!\n`;
+        }else if(geral1[0].reprovado == 1){
+            msg += `1 aluno apenas foi Reprovado!\n`;
+        }else msg += `${geral1[0].reprovado} alunos foram Reprovados!`;
+  
+    alert(msg)
+</script>
