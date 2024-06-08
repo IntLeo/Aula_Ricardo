@@ -14,7 +14,47 @@ A temperatura mais alta registrada.
 A temperatura mais baixa registrada.
 
     */
-   
+    let temp = [];
 
-   
+    temp.push({
+        media: 0,
+        alta: 0,
+        baixa: 1000
+    })
+
+    let dias = parseInt(prompt("Insira quantos dias deseja registrar a temperatura: "));
+
+    for (let x = 1; x <= dias; x++) {
+        let res = parseFloat(prompt(`Digite a média de temperatura no ${x}º dia: `));
+
+        temp.push({
+            dia: x,
+            temp: res
+        });
+
+        /*
+        Calcule e exiba:
+    A temperatura média geral.
+    A temperatura mais alta registrada.
+    A temperatura mais baixa registrada.
+        */
+        let
+        for (let x = 1; x < temp.length; x++) {
+            let maior = 0;
+            let menor = 1000;
+            let media = 0;
+
+            if (temp[x].temp > maior) {
+                maior = temp[x].temp
+                temp[0].alta = x
+            }
+            if (temp[x].temp < menor) {
+                menor = temp[x].temp;
+            }
+            media += temp[x].temp;
+        }
+    }
+
+
+
 </script>
