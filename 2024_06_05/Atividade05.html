@@ -12,6 +12,8 @@ A temperatura média geral.
 A temperatura mais alta registrada.
 A temperatura mais baixa registrada.
 
+Integrantes: Leonardo Machado, juliano Machado, Leonardo Greinert e Leonardo Ferrari
+
     */
   let temp = [];
 
@@ -19,44 +21,52 @@ A temperatura mais baixa registrada.
     media: 0,
     alta: 0,
     Alta: 0,
-    baixa: 1000,
-    Baixa: 0
+    baixa: 0,
+    Baixa: 1000
   });
 
-  let dias = parseInt(
-    prompt("Insira quantos dias deseja registrar a temperatura: ")
-  );
+  let dias = parseInt(prompt("Insira quantos dias deseja registrar a temperatura: "));
 
   for (let x = 1; x <= dias; x++) {
-    let res = parseFloat(
-      prompt(`Digite a média de temperatura no ${x}º dia: `)
-    );
+    let res = parseFloat(prompt(`Digite a média de temperatura no ${x}º dia: `));
+    while (isNaN(res) == 1) {
+      alert("Não informado!");
+      res = parseFloat(prompt(`Digite a média de temperatura no ${x}º dia: `));
+    }
 
     temp.push({
       dia: x,
       temp: res,
     });
 
-}
-    /*
-        Calcule e exiba:
-    A temperatura média geral.
-    A temperatura mais alta registrada.
-    A temperatura mais baixa registrada.
-        */
+  }
+  /*
+      Calcule e exiba:
+  A temperatura média geral.
+  A temperatura mais alta registrada.
+  A temperatura mais baixa registrada.
+      */
 
-    for (let x = 1; x < temp.length; x++) {
-      if (temp[x].temp > temp[0].Alta) {
-        temp[0].Alta = temp[x].temp;
-        temp[0].alta = x;
-      }
-      if (temp[x].temp < temp[0].Baixa) {
-        temp[0].Baixa = temp[x].temp;
-        temp[0].baixa = x;
-      }
-      temp[0].media += temp[x].temp;
+  for (let x = 1; x < temp.length; x++) {
+    if (temp[x].temp > temp[0].Alta) {
+      temp[0].Alta = temp[x].temp;
+      temp[0].alta = x;
     }
-    temp[0].media = temp[0].media / dias;
+    if (temp[x].temp < temp[0].Baixa) {
+      temp[0].Baixa = temp[x].temp;
+      temp[0].baixa = x;
+    }
+    temp[0].media += temp[x].temp;
+  }
+  temp[0].media = temp[0].media / dias;
+  temp[0].media = temp[0].media.toFixed(2);
 
-    console.log(temp)
+  console.log(temp);
+
+  alert(`A média de temperatura foi de ${temp[0].media}ºC`);
+  console.log(`A média de temperatura foi de ${temp[0].media}ºC`);
+  alert(`A Maior temperatura registrada foi de ${temp[0].Alta}ºC no dia ${temp[0].alta}`);
+  console.log(`A Maior temperatura registrada foi de ${temp[0].Alta}ºC no dia ${temp[0].alta}`);
+  alert(`A Menor temperatura registrada foi de ${temp[0].Baixa}ºC no dia ${temp[0].baixa}`);
+  console.log(`A Menor temperatura registrada foi de ${temp[0].Baixa}ºC no dia ${temp[0].baixa}`);
 </script>
